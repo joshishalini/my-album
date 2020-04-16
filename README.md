@@ -1,24 +1,34 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Name:
 
-Things you may want to cover:
+	My Album
 
-* Ruby version
+Description:
 
-* System dependencies
+	My album is a web application.Where you can upload your images, create albums, register.You can upload 25 images at a time in an album.Albums are open for all the visitors and users.On the home page there are 25 last added images with owner email.
 
-* Configuration
+Getting Started:
 
-* Database creation
+	These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-* Database initialization
+Prerequisites:
 
-* How to run the test suite
+	rails 5
+	ruby 2.4.2
 
-* Services (job queues, cache servers, search engines, etc.)
+Installation:
 
-* Deployment instructions
+	Clone the application from git.
+	Change the password from database.yml file.
+	Install bundle.
+	Run the following commands for database setup:
+		rake db:create
+		rake db:migrate
+	run the rails s for server start
 
-* ...
+
+Author:
+
+	Shalini Joshi
+

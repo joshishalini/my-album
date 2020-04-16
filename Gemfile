@@ -38,6 +38,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'bootstrap', '~> 4.4.1'
 gem "slim-rails"
+gem "paperclip", "~> 6.0.0"
+gem 'pry', '~> 0.12.2'
 
 
 

@@ -1,5 +1,18 @@
-<div class="card col-md-12 mt-5">
-	<div class="card-header">
-		<a href="" class="btn btn-warning">Create New Album</a>
-	</div>
-</div>
+.col-md-12.mt-5
+	.card
+		.card-header
+			.row
+				.col-md-9
+					h3 Images
+				.col-md-3
+					-if current_user.present?
+						a.btn.btn-warning.float-right href="/albums/new" Create New Album
+	.card.col-md-12.mt-5
+		-if @images.present?
+			.row
+				-@images.each do |img|
+					a.col-md-4.card href="/albums/#{img.album.id}"
+							= image_tag img.img.url, class:'img-fluid '
+							h3.text-center =img.user_email
+		-else
+			p No Images present.

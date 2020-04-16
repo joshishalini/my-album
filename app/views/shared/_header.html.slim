@@ -1,15 +1,17 @@
-<nav class="navbar navbar-expand-sm bg-light navbar-light">
-	
-  <a class="navbar-brand" href="/">My Album</a>
-  <ul class="navbar-nav ml-auto">
-    <li class="nav-item active">
-      <a class="nav-link" href="/users/sign_in">Login</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/users/sign_up">Register</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/users/sign_up">Logout</a>
-    </li>
-  </ul>
-</nav>
+nav.navbar.navbar-expand-sm.bg-light.navbar-light
+  a.navbar-brand href="/"  My Album
+  ul.navbar-nav.ml-auto
+    li.nav-item
+        a.nav-link href="/"  Home
+    li.nav-item
+      a.nav-link href="/albums"  All album
+    -if current_user.present?
+      li.nav-item
+        a.nav-link href="/profile"  Profile
+      li.nav-item
+        =link_to 'Logout', '/users/sign_out',method: :delete, class: "nav-link"
+    -else
+      li.nav-item
+        a.nav-link href="/users/sign_in"  Login
+      li.nav-item
+        a.nav-link href="/users/sign_up"  Register

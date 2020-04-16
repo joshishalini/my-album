@@ -1,0 +1,37 @@
+.col-md-12.mt-5
+	.card.
+		.card-header
+			.row
+				.col-md-9
+					h3 Create New Album
+		.card-body
+			=form_for @album, html: { multipart: true, class: "m-form m-form--fit m-form--label-align-right"} do |f|
+				.form-group.m-form__group.row
+					label.col-2.col-form-label.required-field for="projectinput1" Name
+					.col-md-9
+						= f.text_field :name, class: "form-control ", placeholder:"Name", required:""
+				table.table.table-bordered.more-image
+					tr
+						th Tag Line
+						th Upload Image
+					tr.image-count
+						td
+							.form-group.m-form__group.row
+								.col-md-12
+									= text_field_tag "album[images_attributes][][tag_line]", "", class: "form-control ", placeholder:"Name", required:""
+						td
+							.form-group.m-form__group.row
+								.col-md-12
+									= file_field_tag 'album[images_attributes][][img]', accept: 'image/png,image/gif,image/jpeg', required: true
+					tr#image-btn
+						td colspan="2"
+							a.btn.btn-warning.add_image id="hide_add_image_button" href="/albums/add_image" data-remote="true" data-toggle="tooltip" title="Add New Image" Add image 
+				.row
+					.col-md-12
+						= f.submit "Create Album", :class => 'btn btn-primary'
+javascript:
+	$(document).on('click','.add_image', function(){
+		if ($('.image-count').length > 23){
+			$('#image-btn').remove();
+		}
+	});

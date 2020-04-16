@@ -1,0 +1,9 @@
+tr.image-count
+	td
+		.form-group.m-form__group.row
+			.col-md-12
+				= text_field_tag "album[images_attributes][][tag_line]", "", class: "form-control ", placeholder:"Name", required:""
+	td
+		.form-group.m-form__group.row
+			.col-md-12
+				= file_field_tag 'album[images_attributes][][img]', accept: 'image/png,image/gif,image/jpeg', required: true

@@ -1,0 +1,20 @@
+.col-md-12.mt-5
+	.card
+		.card-header
+			.row
+				.col-md-9
+					h3 = @album.name
+				.col-md-3
+					a.btn.btn-warning.ml-5 href="/" View all albums
+		.card-body
+			.row
+				-if @album.images.present?
+					- @album.images.each do |image|
+						.col-md-4
+							.card
+								.card-header
+									p = image.tag_line
+								.card-body
+									= image_tag image.img.try(:url), class:'img-fluid img-thumbnail '
+				-else
+						p No Images Present.

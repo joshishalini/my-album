@@ -1,0 +1,18 @@
+.col-md-12.mt-5
+	.card
+		.card-header
+			.row
+				.col-md-9
+					h3 Album
+				-if current_user.present?
+					.col-md-3
+						a.btn.btn-warning.float-right href="/albums/new" Create New Album
+		.card-body
+			-if @albums.present?
+				.row
+					-@albums.each do |album|
+						a.col-md-4.card href="/albums/#{album.id}"
+								= image_tag album.first_image_url, class:'img-fluid '
+								h3.text-center =album.name
+			-else
+				p No albums present.

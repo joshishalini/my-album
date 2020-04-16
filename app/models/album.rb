@@ -2,10 +2,14 @@ class Album < ApplicationRecord
 
 	# ========association ======
 	has_many :images
-	belong_to :user
+	belongs_to :user
 
 	accepts_nested_attributes_for :images
 
 	# ========validation======
-	validates :title, presence: :true
+	validates :name, presence: :true
+
+	def first_image_url
+		images.first.img.try(:url)
+	end
 end
