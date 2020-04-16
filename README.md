@@ -6,7 +6,7 @@ Name:
 
 Description:
 
-	My album is a web application.Where you can upload your images, create albums, register.You can upload 25 images at a time in an album.Albums are open for all the visitors and users.On the home page there are 25 last added images with owner email.
+	My album is a web application where you can upload your own images, create albums, and register an account. You can upload 25 images at a time in an album, and also view the images uploaded by other users.
 
 Getting Started:
 
@@ -14,8 +14,8 @@ Getting Started:
 
 Prerequisites:
 
-	rails 5
-	ruby 2.4.2
+	Rails 5
+	Ruby 2.4.2
 
 Installation:
 
