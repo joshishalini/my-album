@@ -4,6 +4,8 @@ class Image < ApplicationRecord
   validates_attachment_content_type :img, content_type: /\Aimage\/.*\z/
   validates :tag_line, :img, presence: :true
 
+  # validate :limit_images
+
   before_save :limit_images
 
 	def limit_images
@@ -12,6 +14,10 @@ class Image < ApplicationRecord
 			self.errors.add(:base, 'Not more then 25 images allowed.') 
   	end
 	end
+
+	# def limit_images
+		# self.errors.add(:base, 'Not more then 25 images allowed.') if album.images.length <25
+	# end
 
   def user_email
   	album.user.email
