@@ -4,7 +4,7 @@ class Album < ApplicationRecord
 	has_many :images
 	belongs_to :user
 
-	accepts_nested_attributes_for :images
+	accepts_nested_attributes_for :images, allow_destroy: true
 
 	# ========validation======
 	validates :name, presence: :true
